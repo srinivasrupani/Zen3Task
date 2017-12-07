@@ -2,6 +2,7 @@ package com.srinivas.apps.sr500pxapplication.photos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -56,20 +57,20 @@ public class PhotosSearchActivity extends AppCompatActivity {
     }
 
     private void handlePhotosSearch() {
-        LoaderUtil.getInstance().showProgress(this, "Photos searching..!");
-        if (mTerm.getText().toString() != null && mTerm.getText().toString().trim().length() > 0) {
+        LoaderUtil.getInstance().showProgress(this, "Photos searching...!");
+        if (mTerm.getText().toString().trim().length() > 0) {
             term = mTerm.getText().toString().trim();
         }
-        if (mTag.getText().toString() != null && mTag.getText().toString().trim().length() > 0) {
+        if (mTag.getText().toString().trim().length() > 0) {
             term = term + "&tag=" + mTag.getText().toString();
         }
-        if (mPage.getText().toString() != null && mPage.getText().toString().trim().length() > 0) {
+        if (mPage.getText().toString().trim().length() > 0) {
             term = term + "&page=" + mPage.getText().toString();
         }
-        if (mRpp.getText().toString() != null && mRpp.getText().toString().trim().length() > 0) {
+        if (mRpp.getText().toString().trim().length() > 0) {
             term = term + "&rpp=" + mRpp.getText().toString();
         }
-        if (mTags.getText().toString() != null && mTags.getText().toString().trim().length() > 0) {
+        if (mTags.getText().toString().trim().length() > 0) {
             term = term + "&tags" + mTags.getText().toString();
         }
 
@@ -77,12 +78,13 @@ public class PhotosSearchActivity extends AppCompatActivity {
             getResources().getString(R.string.px_consumer_key));
         homeResponseCall.enqueue(new Callback<HomeResponse>() {
             @Override
-            public void onResponse(Call<HomeResponse> call, Response<HomeResponse> response) {
+            public void onResponse(@NonNull Call<HomeResponse> call, @NonNull Response<HomeResponse> response) {
                 Log.e("PX", "PS-OK" + response.code());
                 LoaderUtil.getInstance().hideProgress();
                 if (response.code() == Constants.OK) {
-                    Zen3TaskApplication.getInstance().setHomeResponse(response.body());
-                    EventBus.getDefault().postSticky(response.body());
+                    HomeResponse homeResponse=response.body();
+                    Zen3TaskApplication.getInstance().setHomeResponse(homeResponse);
+                    EventBus.getDefault().postSticky(homeResponse);
                     mIntent = new Intent(PhotosSearchActivity.this, PhotosGridActivity.class);
                     mIntent.putExtra("term", mTerm.getText().toString());
                     startActivity(mIntent);
@@ -92,7 +94,7 @@ public class PhotosSearchActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<HomeResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<HomeResponse> call, Throwable t) {
                 Log.e("PX", "PS-FAIL" + t.getMessage());
                 LoaderUtil.getInstance().hideProgress();
             }
