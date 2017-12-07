@@ -56,7 +56,7 @@ public class PhotosSearchActivity extends AppCompatActivity {
     }
 
     private void handlePhotosSearch() {
-        LoaderUtil.getInstance().showProgress(this, "Photos searching..");
+        LoaderUtil.getInstance().showProgress(this, "Photos searching..!");
         if (mTerm.getText().toString() != null && mTerm.getText().toString().trim().length() > 0) {
             term = mTerm.getText().toString().trim();
         }
