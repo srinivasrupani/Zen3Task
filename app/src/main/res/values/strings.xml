@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Sr500PxApplication</string>
+    <string name="base_url">https://api.500px.com/v1/</string>
+    <string name="px_consumer_key">gMD8cXVcoul9ebmIblTWbM95VvcEMsWhSwoU8kRQ</string>
+    <string name="px_consumer_secret">jrYSesHjkuLjEYlBFdtXgGPhjMXvrdUzsaUmOTOi</string>
+    <string name="error_invalid_emailid">Invalid email</string>
+    <string name="hint_user_name_e_mail">User Name / E-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="label_submit">Submit</string>
+    <string name="hint_term">Term</string>
+    <string name="hint_tag">Tag</string>
+    <string name="hint_page">Page</string>
+    <string name="hint_rpp">Rpp</string>
+    <string name="hint_tags">Tags</string>
+    <string name="label_search">Search</string>
+    <string name="message_no_internet_connection">No Internet Connection..!\n Please check your connection</string>
+    <string name="label_search_photos">Search Photos</string>
+    <string name="auth_value">OAuth oauth_consumer_key=\"gMD8cXVcoul9ebmIblTWbM95VvcEMsWhSwoU8kRQ\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1512535664\",oauth_nonce=\"OLyR3d\",oauth_version=\"1.0\",oauth_signature=\"e7Zhep5BZ6zJNP%2F3rPs%2B6%2FV6l3U%3D\"</string>
+
+</resources>

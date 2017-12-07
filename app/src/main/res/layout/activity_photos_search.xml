@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.srinivas.apps.sr500pxapplication.photos.PhotosSearchActivity">
+    <!--term,tag,page,rpp,tags-->
+    <EditText
+        android:id="@+id/photoTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:hint="@string/hint_term"
+        android:padding="@dimen/margin_5"/>
+
+    <EditText
+        android:id="@+id/photoTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:hint="@string/hint_tag"
+        android:padding="@dimen/margin_5"/>
+
+    <EditText
+        android:id="@+id/photoPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:hint="@string/hint_page"
+        android:padding="@dimen/margin_5"/>
+
+    <EditText
+        android:id="@+id/photoRPP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:hint="@string/hint_rpp"
+        android:padding="@dimen/margin_5"/>
+
+    <EditText
+        android:id="@+id/photoTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:hint="@string/hint_tags"
+        android:padding="@dimen/margin_5"/>
+
+    <Button
+        android:id="@+id/doPhotoSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@drawable/background_white"
+        android:ems="14"
+        android:padding="@dimen/margin_5"
+        android:text="@string/label_search"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
+
+</LinearLayout>
